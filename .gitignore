@@ -1,0 +1,16 @@
+
+# Exclude node_modules (too large)
+frontend/node_modules/
+
+# Exclude Next.js build and cache folders
+frontend/.next/
+frontend/out/
+
+# Exclude Python caches but keep venv
+backend/__pycache__/
+backend/*.pyc
+backend/.pytest_cache/
+
+# General system files
+.DS_Store
+.env
