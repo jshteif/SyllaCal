@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SyllaCal</title>
+  <style>
+    body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers everything together */
+  gap: 60px; /* space between left card, arrow, and right card */
+  background-color: #DFDBE5;
+  background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2395ac92' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 0h35v35H0V0zm5 5h25v25H5V5zm5 5h15v15H10V10zm5 5h5v5h-5v-5zM40 5h25v25H40V5zm5 5h15v15H45V10zm5 5h5v5h-5v-5zM70 35H35v35h35V35zm-5 5H40v25h25V40zm-5 5H45v15h15V45zm-5 5h-5v5h5v-5zM30 40H5v25h25V40zm-5 5H10v15h15V45zm-5 5h-5v5h5v-5z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 70px 70px;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+    .card {
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin: 0 20px; /* closer to middle */
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .upload, .download {
+      cursor: pointer;
+    }
+
+    .arrow {
+      font-size: 60px;
+      color: #95ac92;
+      opacity: 0.8;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translateX(0); opacity: 0.8; }
+      50% { transform: translateX(10px); opacity: 1; }
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      background: #95ac92;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    label:hover {
+      background: #a9bea6;
+    }
+
+    button {
+      background: #95ac92;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #a9bea6;
+    }
+
+    .logo {
+        position: absolute;
+        top: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        height: auto;
+        opacity: 0.95;
+        pointer-events: none;
+    }
+
+  </style>
+</head>
+<body>
+    <img src="SYLLACAL_logo_transparent.png" alt="SyllaCal Logo" class="logo" />
+  <div class="card upload">
+    <h2>Upload Syllabus</h2>
+    <input type="file" id="fileInput" multiple />
+    <label for="fileInput">Choose Files</label>
+  </div>
+
+  <div class="arrow">➜</div>
+
+  <div class="card download">
+    <h2>Download Calendar</h2>
+    <button>Download .ics</button>
+  </div>
+</body>
+</html>

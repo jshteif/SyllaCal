@@ -1,0 +1,90 @@
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+    /* ✨ Your custom background */
+    background-color: #c04b3d;
+    background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f8d03f' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 0h35v35H0V0zm5 5h25v25H5V5zm5 5h15v15H10V10zm5 5h5v5h-5v-5zM40 5h25v25H40V5zm5 5h15v15H45V10zm5 5h5v5h-5v-5zM70 35H35v35h35V35zm-5 5H40v25h25V40zm-5 5H45v15h15V45zm-5 5h-5v5h5v-5zM30 40H5v25h25V40zm-5 5H10v15h15V45zm-5 5h-5v5h5v-5z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  
+  /* Container styles */
+  .container {
+    text-align: center;
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #ffe9a3;
+  }
+  
+  .subtitle {
+    color: #fff5cc;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  .upload-label {
+    font-weight: bold;
+  }
+  
+  input[type="file"] {
+    margin: 10px 0;
+    color: #fff;
+  }
+  
+  button {
+    background-color: #f8d03f;
+    color: #4a1d18;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: transform 0.15s ease, background 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #ffde5a;
+    transform: scale(1.05);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    color: #fff;
+  }
+  
+  th, td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px;
+  }
+  
+  th {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  footer {
+    text-align: center;
+    color: #fff8dc;
+    font-size: 0.9em;
+    padding: 20px;
+  }
