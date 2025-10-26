@@ -5,7 +5,7 @@ import PyPDF2
 from datetime import date, timedelta    
 import uuid
 import ast
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 import os
 
 weekdays_short = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU']
@@ -57,6 +57,10 @@ def formatICalendarEvent(event_name, dayList, start_time, end_time, location, nu
         "END:VEVENT\n"
         "END:VCALENDAR\n"
     )
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/download/<filename>')
 def download_ics(filename):
@@ -117,7 +121,8 @@ def upload_pdf():
                 num_weeks = int(array[5]) if len(array) > 5 else 10
                 iCal_text = formatICalendarEvent(event_name, dayList, start_time, end_time, location, num_weeks)
                 file_name = event_name.replace(" ", "_") + "_Weekly.ics"
-                with open(file_name, 'w') as f:
+                ics_path = os.path.join(UPLOAD_FOLDER, file_name)
+                with open(ics_path, 'w') as f:
                     f.write(iCal_text)
                 results.append({
                     "filename": file.filename,
